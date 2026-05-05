@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-freebieapp-dev-43813-authRole",
+      "UnauthRoleArn": "arn:aws:iam::131511869128:role/amplify-freebieapp-dev-43813-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::131511869128:role/amplify-freebieapp-dev-43813-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-freebieapp-dev-43813-deployment",
+      "UnauthRoleName": "amplify-freebieapp-dev-43813-unauthRole",
+      "StackName": "amplify-freebieapp-dev-43813",
+      "StackId": "arn:aws:cloudformation:us-west-2:131511869128:stack/amplify-freebieapp-dev-43813/0bf90340-48c2-11f1-91f9-0a469a421c97",
+      "AmplifyAppId": "dfeebvk54v1lu"
+    },
+    "categories": {
+      "api": {
+        "freebieapp": {}
+      }
+    }
+  }
+}
