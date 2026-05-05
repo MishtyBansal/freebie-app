@@ -3,8 +3,19 @@
 input AMPLIFY {
   globalAuthRule: AuthRule = { allow: public }
 } # FOR TESTING ONLY!
-type Todo @model {
+type User @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  name: String!
+  username: String!
+  freebies: [Freebie] @hasMany
+}
+
+type Freebie
+  @model
+  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  id: ID!
+  title: String!
   description: String
+  createdAt: AWSDateTime
+  userID: ID!
+  user: User @belongsTo(fields: ["userID"])
 }
