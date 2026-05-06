@@ -8,47 +8,61 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createTodo = /* GraphQL */ `mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+export const createUser = /* GraphQL */ `mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
+  createUser(input: $input, condition: $condition) {
     id
-    name
-    description
+    username
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTodoMutationVariables,
-  APITypes.CreateTodoMutation
+  APITypes.CreateUserMutationVariables,
+  APITypes.CreateUserMutation
 >;
-export const updateTodo = /* GraphQL */ `mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+export const updateUser = /* GraphQL */ `mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
+  updateUser(input: $input, condition: $condition) {
     id
-    name
-    description
+    username
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateTodoMutationVariables,
-  APITypes.UpdateTodoMutation
+  APITypes.UpdateUserMutationVariables,
+  APITypes.UpdateUserMutation
 >;
-export const deleteTodo = /* GraphQL */ `mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+export const deleteUser = /* GraphQL */ `mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
+  deleteUser(input: $input, condition: $condition) {
     id
-    name
+    username
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteUserMutationVariables,
+  APITypes.DeleteUserMutation
+>;
+export const createFreebie = /* GraphQL */ `mutation CreateFreebie(
+  $input: CreateFreebieInput!
+  $condition: ModelFreebieConditionInput
+) {
+  createFreebie(input: $input, condition: $condition) {
+    id
+    title
     description
     createdAt
     updatedAt
@@ -56,6 +70,40 @@ export const deleteTodo = /* GraphQL */ `mutation DeleteTodo(
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteTodoMutationVariables,
-  APITypes.DeleteTodoMutation
+  APITypes.CreateFreebieMutationVariables,
+  APITypes.CreateFreebieMutation
+>;
+export const updateFreebie = /* GraphQL */ `mutation UpdateFreebie(
+  $input: UpdateFreebieInput!
+  $condition: ModelFreebieConditionInput
+) {
+  updateFreebie(input: $input, condition: $condition) {
+    id
+    title
+    description
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateFreebieMutationVariables,
+  APITypes.UpdateFreebieMutation
+>;
+export const deleteFreebie = /* GraphQL */ `mutation DeleteFreebie(
+  $input: DeleteFreebieInput!
+  $condition: ModelFreebieConditionInput
+) {
+  deleteFreebie(input: $input, condition: $condition) {
+    id
+    title
+    description
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteFreebieMutationVariables,
+  APITypes.DeleteFreebieMutation
 >;
