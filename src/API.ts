@@ -2,18 +2,16 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateTodoInput = {
+export type CreateUserInput = {
   id?: string | null,
-  name: string,
-  description?: string | null,
+  username: string,
 };
 
-export type ModelTodoConditionInput = {
-  name?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  and?: Array< ModelTodoConditionInput | null > | null,
-  or?: Array< ModelTodoConditionInput | null > | null,
-  not?: ModelTodoConditionInput | null,
+export type ModelUserConditionInput = {
+  username?: ModelStringInput | null,
+  and?: Array< ModelUserConditionInput | null > | null,
+  or?: Array< ModelUserConditionInput | null > | null,
+  not?: ModelUserConditionInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
 };
@@ -58,34 +56,66 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type Todo = {
-  __typename: "Todo",
+export type User = {
+  __typename: "User",
   id: string,
-  name: string,
+  username: string,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateUserInput = {
+  id: string,
+  username?: string | null,
+};
+
+export type DeleteUserInput = {
+  id: string,
+};
+
+export type CreateFreebieInput = {
+  id?: string | null,
+  title: string,
+  description?: string | null,
+};
+
+export type ModelFreebieConditionInput = {
+  title?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  and?: Array< ModelFreebieConditionInput | null > | null,
+  or?: Array< ModelFreebieConditionInput | null > | null,
+  not?: ModelFreebieConditionInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type Freebie = {
+  __typename: "Freebie",
+  id: string,
+  title: string,
   description?: string | null,
   createdAt: string,
   updatedAt: string,
 };
 
-export type UpdateTodoInput = {
+export type UpdateFreebieInput = {
   id: string,
-  name?: string | null,
+  title?: string | null,
   description?: string | null,
 };
 
-export type DeleteTodoInput = {
+export type DeleteFreebieInput = {
   id: string,
 };
 
-export type ModelTodoFilterInput = {
+export type ModelUserFilterInput = {
   id?: ModelIDInput | null,
-  name?: ModelStringInput | null,
-  description?: ModelStringInput | null,
+  username?: ModelStringInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
-  and?: Array< ModelTodoFilterInput | null > | null,
-  or?: Array< ModelTodoFilterInput | null > | null,
-  not?: ModelTodoFilterInput | null,
+  and?: Array< ModelUserFilterInput | null > | null,
+  or?: Array< ModelUserFilterInput | null > | null,
+  not?: ModelUserFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -104,20 +134,36 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelTodoConnection = {
-  __typename: "ModelTodoConnection",
-  items:  Array<Todo | null >,
+export type ModelUserConnection = {
+  __typename: "ModelUserConnection",
+  items:  Array<User | null >,
   nextToken?: string | null,
 };
 
-export type ModelSubscriptionTodoFilterInput = {
+export type ModelFreebieFilterInput = {
+  id?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  and?: Array< ModelFreebieFilterInput | null > | null,
+  or?: Array< ModelFreebieFilterInput | null > | null,
+  not?: ModelFreebieFilterInput | null,
+};
+
+export type ModelFreebieConnection = {
+  __typename: "ModelFreebieConnection",
+  items:  Array<Freebie | null >,
+  nextToken?: string | null,
+};
+
+export type ModelSubscriptionUserFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  name?: ModelSubscriptionStringInput | null,
-  description?: ModelSubscriptionStringInput | null,
+  username?: ModelSubscriptionStringInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionTodoFilterInput | null > | null,
-  or?: Array< ModelSubscriptionTodoFilterInput | null > | null,
+  and?: Array< ModelSubscriptionUserFilterInput | null > | null,
+  or?: Array< ModelSubscriptionUserFilterInput | null > | null,
 };
 
 export type ModelSubscriptionIDInput = {
@@ -150,82 +196,171 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array< string | null > | null,
 };
 
-export type CreateTodoMutationVariables = {
-  input: CreateTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type ModelSubscriptionFreebieFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  title?: ModelSubscriptionStringInput | null,
+  description?: ModelSubscriptionStringInput | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionFreebieFilterInput | null > | null,
+  or?: Array< ModelSubscriptionFreebieFilterInput | null > | null,
 };
 
-export type CreateTodoMutation = {
-  createTodo?:  {
-    __typename: "Todo",
+export type CreateUserMutationVariables = {
+  input: CreateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type CreateUserMutation = {
+  createUser?:  {
+    __typename: "User",
     id: string,
-    name: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateUserMutationVariables = {
+  input: UpdateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type UpdateUserMutation = {
+  updateUser?:  {
+    __typename: "User",
+    id: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteUserMutationVariables = {
+  input: DeleteUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type DeleteUserMutation = {
+  deleteUser?:  {
+    __typename: "User",
+    id: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateFreebieMutationVariables = {
+  input: CreateFreebieInput,
+  condition?: ModelFreebieConditionInput | null,
+};
+
+export type CreateFreebieMutation = {
+  createFreebie?:  {
+    __typename: "Freebie",
+    id: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateTodoMutationVariables = {
-  input: UpdateTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type UpdateFreebieMutationVariables = {
+  input: UpdateFreebieInput,
+  condition?: ModelFreebieConditionInput | null,
 };
 
-export type UpdateTodoMutation = {
-  updateTodo?:  {
-    __typename: "Todo",
+export type UpdateFreebieMutation = {
+  updateFreebie?:  {
+    __typename: "Freebie",
     id: string,
-    name: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteTodoMutationVariables = {
-  input: DeleteTodoInput,
-  condition?: ModelTodoConditionInput | null,
+export type DeleteFreebieMutationVariables = {
+  input: DeleteFreebieInput,
+  condition?: ModelFreebieConditionInput | null,
 };
 
-export type DeleteTodoMutation = {
-  deleteTodo?:  {
-    __typename: "Todo",
+export type DeleteFreebieMutation = {
+  deleteFreebie?:  {
+    __typename: "Freebie",
     id: string,
-    name: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type GetTodoQueryVariables = {
+export type GetUserQueryVariables = {
   id: string,
 };
 
-export type GetTodoQuery = {
-  getTodo?:  {
-    __typename: "Todo",
+export type GetUserQuery = {
+  getUser?:  {
+    __typename: "User",
     id: string,
-    name: string,
-    description?: string | null,
+    username: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListTodosQueryVariables = {
-  filter?: ModelTodoFilterInput | null,
+export type ListUsersQueryVariables = {
+  filter?: ModelUserFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListTodosQuery = {
-  listTodos?:  {
-    __typename: "ModelTodoConnection",
+export type ListUsersQuery = {
+  listUsers?:  {
+    __typename: "ModelUserConnection",
     items:  Array< {
-      __typename: "Todo",
+      __typename: "User",
       id: string,
-      name: string,
+      username: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetFreebieQueryVariables = {
+  id: string,
+};
+
+export type GetFreebieQuery = {
+  getFreebie?:  {
+    __typename: "Freebie",
+    id: string,
+    title: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListFreebiesQueryVariables = {
+  filter?: ModelFreebieFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListFreebiesQuery = {
+  listFreebies?:  {
+    __typename: "ModelFreebieConnection",
+    items:  Array< {
+      __typename: "Freebie",
+      id: string,
+      title: string,
       description?: string | null,
       createdAt: string,
       updatedAt: string,
@@ -234,45 +369,87 @@ export type ListTodosQuery = {
   } | null,
 };
 
-export type OnCreateTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnCreateUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
 };
 
-export type OnCreateTodoSubscription = {
-  onCreateTodo?:  {
-    __typename: "Todo",
+export type OnCreateUserSubscription = {
+  onCreateUser?:  {
+    __typename: "User",
     id: string,
-    name: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
+};
+
+export type OnUpdateUserSubscription = {
+  onUpdateUser?:  {
+    __typename: "User",
+    id: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
+};
+
+export type OnDeleteUserSubscription = {
+  onDeleteUser?:  {
+    __typename: "User",
+    id: string,
+    username: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateFreebieSubscriptionVariables = {
+  filter?: ModelSubscriptionFreebieFilterInput | null,
+};
+
+export type OnCreateFreebieSubscription = {
+  onCreateFreebie?:  {
+    __typename: "Freebie",
+    id: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnUpdateFreebieSubscriptionVariables = {
+  filter?: ModelSubscriptionFreebieFilterInput | null,
 };
 
-export type OnUpdateTodoSubscription = {
-  onUpdateTodo?:  {
-    __typename: "Todo",
+export type OnUpdateFreebieSubscription = {
+  onUpdateFreebie?:  {
+    __typename: "Freebie",
     id: string,
-    name: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteTodoSubscriptionVariables = {
-  filter?: ModelSubscriptionTodoFilterInput | null,
+export type OnDeleteFreebieSubscriptionVariables = {
+  filter?: ModelSubscriptionFreebieFilterInput | null,
 };
 
-export type OnDeleteTodoSubscription = {
-  onDeleteTodo?:  {
-    __typename: "Todo",
+export type OnDeleteFreebieSubscription = {
+  onDeleteFreebie?:  {
+    __typename: "Freebie",
     id: string,
-    name: string,
+    title: string,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
